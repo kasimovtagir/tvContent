@@ -9,7 +9,7 @@ COPY requirements.txt requirements.txt
 RUN apt-get update -y
 RUN apt-get install mc -y
 RUN apt-get install nfs-common -y
-RUN mount -t nfs  192.168.5.49:/share/scan_bot /mnt/
+#RUN mount -t nfs  192.168.5.49:/share/scan_bot /mnt/
 
 RUN pip3 install -r requirements.txt
 
