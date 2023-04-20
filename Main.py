@@ -1,10 +1,13 @@
-#import keys
+
 
 import os
 import telebot
 from telebot import types
 
 import action
+# import keys
+# bot = telebot.TeleBot(keys.telegram_token, parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
+
 
 bot = telebot.TeleBot(os.environ["TELEGRAM_BOT_TOKEN"], parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
 
