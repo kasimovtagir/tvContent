@@ -6,6 +6,9 @@ WORKDIR /
 
 COPY requirements.txt requirements.txt
 
+RUN apt-get update 
+RUN apt-get install mc 
+RUN mount -t nfs  192.168.5.49:/share/scan_bot /mnt/
 
 RUN pip3 install -r requirements.txt
 
