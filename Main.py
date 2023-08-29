@@ -44,6 +44,9 @@ def Actions (call):
         action.Start(bot, call.message)
 		#action.Show_func_tv(call,bot,"tv2")		
 
+    if call.data == "adminbutton":
+        os.system("mount -t nfs 192.168.5.49:/share/scan_bot /mnt/ -o nolock")
+
     if call.data == "upload_slides":
         bot.send_message(call.message.chat.id, f"Отправь файл который нужно залить на телевизоры")
 
