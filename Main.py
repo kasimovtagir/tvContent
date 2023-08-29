@@ -7,11 +7,12 @@ from telebot import types
 import action
 # import keys
 # bot = telebot.TeleBot(keys.telegram_token, parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
-
+# ADMINS = keys.ADMINS
 
 bot = telebot.TeleBot(os.environ["TELEGRAM_BOT_TOKEN"], parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
+ADMINS = os.environ["ADMINS"] 
 
-ADMINS = ["815850294","257968418"]
+
 
 @bot.message_handler(func=lambda message: str(message.chat.id) not in str( ADMINS))
 def some(message):
