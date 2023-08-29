@@ -16,9 +16,15 @@ def button_start():
 def Start(bot:telebot.TeleBot, message):
     bot.send_message(message.chat.id, text=(f'Привет, {str(message.from_user.first_name)}\nВот список доступных телевизоров.'), reply_markup= button_start())
     keyboard = types.InlineKeyboardMarkup(row_width=3)
-    tv1 = types.InlineKeyboardButton(text='TV1', callback_data='tv1')
-    tv2 = types.InlineKeyboardButton(text='TV2', callback_data='tv2')
-    keyboard.add(tv1,tv2)
+    if (message.chat.id == "815850294"):
+        tv1 = types.InlineKeyboardButton(text='TV1', callback_data='tv1')
+        tv2 = types.InlineKeyboardButton(text='TV2', callback_data='tv2')
+        adminbutton = types.InlineKeyboardButton(text='adminbutton', callback_data='adminbutton')
+        keyboard.add(tv1,tv2,adminbutton)
+    else:    
+        tv1 = types.InlineKeyboardButton(text='TV1', callback_data='tv1')
+        tv2 = types.InlineKeyboardButton(text='TV2', callback_data='tv2')
+        keyboard.add(tv1,tv2)
     bot.send_message(message.chat.id, text='Выбирай:', reply_markup=keyboard)
 
 
